@@ -1,9 +1,8 @@
 const mongoose = require('mongoose');
 
 mongoose.connect('mongodb://localhost:27017/paytm ', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
 });
+console.log("connected to mongodb")
 
 const userSchema = new mongoose.Schema({
     username:String,
@@ -12,7 +11,7 @@ const userSchema = new mongoose.Schema({
     lastName:String
 })
 
- const User = new mongoose.Model("User",userSchema);
+ const User = new mongoose.model("User",userSchema);
 
  module.exports  = {
     User
